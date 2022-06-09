@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css"
+      rel="stylesheet"
+    />
+    <!-- JQuery for toogle button -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header of page -->
+
+    <div id="header">
+      <div>
+        <h1 id="title">Weather App</h1>
+        <button id="moreInfo" class="btn btn-secondary">i</button>
+      </div>
+      <input
+        type="checkbox"
+        checked
+        data-toggle="toggle"
+        data-on="F"
+        data-off="C"
+        data-onstyle="dark"
+      />
+    </div>
+
+    <!-- Search bar & alert message -->
+    <div id="formDiv">
+      <form action="">
+        <div id="form-group">
+          <label id="inpLabel" for="">Search for city</label> <br />
+          <input itemid="" type="text" name="" id="searchInp" />
+        </div>
+
+        <button id="searchBtn" class="btn btn-primary">Search</button>
+      </form>
+
+      <section id="alertUser">
+        <p>Temporary alert</p>
+      </section>
+    </div>
+
+    <div id="gridList">
+      <div class="box">
+        <div>
+          <h4>New York, US</h4>
+        </div>
+        <div class="twoColumns">
+          <h2>64</h2>
+          <div>
+            <img class="weatherIcon" src="clear-sky.png" alt="" />
+          </div>
+        </div>
+        <p>Sunny</p>
+      </div>
+      <div class="box"></div>
+
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

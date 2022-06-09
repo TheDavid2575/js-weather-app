@@ -1,0 +1,175 @@
+/* All */
+body {
+  font-family: "Inter", sans-serif;
+  width: 90%;
+  margin: auto;
+  background-color: #4b81a8bb;
+}
+
+/* Header */
+#header {
+  margin-top: 40px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header div {
+  display: flex;
+  align-items: center;
+}
+
+#title {
+  font-size: 65px;
+  font-weight: 800;
+  color: #ffd600;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+#moreInfo {
+  margin: 0px 0px 0px 20px;
+}
+
+/* SEARCH FORM  */
+
+#formDiv {
+  margin: 10px 0px 20px 0px;
+}
+
+#formDiv form {
+  /* background-color: yellow; */
+  padding: 10px;
+  display: flex;
+  align-items: flex-end;
+  margin: 0px 0px 20px 0px;
+}
+
+#inpLabel {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+#searchInp {
+  border: none;
+  border-radius: 10px;
+  font-size: 23px;
+  font-weight: 300;
+  width: 400px;
+  padding-left: 7px;
+}
+
+#searchBtn {
+  margin: 0px 0px 0px 15px;
+  width: 100px;
+  border-radius: 10px;
+  border-color: black;
+  font-size: 18px;
+  font-weight: 500;
+  background-color: #ffd600;
+  color: black;
+}
+
+/* User alert text */
+#alertUser {
+  padding-left: 10px;
+  font-size: 25px;
+  color: rgb(118, 0, 0);
+  font-weight: 700;
+  opacity: 0%;
+}
+
+/* Dynamic boxes */
+
+#gridList {
+  display: grid;
+  grid-gap: 32px 20px;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 1000px) {
+  #gridList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #gridList {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  #gridList {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.box {
+  background-color: #697d8b;
+  border-radius: 20px;
+  color: white;
+  font-weight: 700;
+  height: 200px;
+  width: 85%;
+  padding: 15px 15px 15px 15px;
+}
+/* 
+.box ::after {
+  content: "hi";
+} */
+
+/* City Name */
+.box h4 {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+/* Temperature and icon */
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 115px;
+}
+
+.twoColumns :first-child {
+  justify-self: flex-start;
+  align-self: flex-end;
+  margin: 0px;
+}
+
+.weatherIcon {
+  height: 85px;
+  width: 85px;
+}
+
+.twoColumns h2 {
+  font-size: 50px;
+  font-weight: 900;
+}
+
+.twoColumns :last-child {
+  justify-self: center;
+  align-self: center;
+  margin: 0px;
+}
+
+/* Weather description */
+.box p {
+  color: #ffd600;
+  padding-left: 5px;
+}
+
+/* Double box back */
+
+/* #gridList ::after {
+  content: " ";
+  display: block;
+  height: 50px;
+  width: 50px;
+  background-color: rgb(7, 255, 73);
+  z-index: 1;
+} */

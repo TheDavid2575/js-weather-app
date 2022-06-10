@@ -1,5 +1,6 @@
 /* All */
 body {
+  display: block;
   font-family: "Inter", sans-serif;
   width: 90%;
   margin: auto;
@@ -85,7 +86,7 @@ body {
 
 #gridList {
   display: grid;
-  grid-gap: 32px 20px;
+  grid-gap: 32px 25px;
   grid-template-columns: repeat(4, 1fr);
 }
 
@@ -94,9 +95,13 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .box {
+    min-width: 218px;
+  }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 750px) {
   #gridList {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -110,29 +115,42 @@ body {
 
 .box {
   background-color: #697d8b;
+  display: block;
+  position: relative;
   border-radius: 20px;
   color: white;
   font-weight: 700;
-  height: 200px;
+  height: 240px;
   width: 85%;
   padding: 15px 15px 15px 15px;
+  z-index: 1;
+  min-width: 220px;
 }
-/* 
-.box ::after {
-  content: "hi";
+
+/* Double box back */
+/* .box::before {
+  content: "";
+  display: block;
+  height: 235px;
+  width: 100%;
+  border-radius: 20px;
+  position: absolute;
+  background-color: rgb(174, 174, 174);
+  z-index: -1;
 } */
 
 /* City Name */
 .box h4 {
   font-size: 20px;
   font-weight: 800;
+  text-align: center;
 }
 
 /* Temperature and icon */
 .twoColumns {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  height: 115px;
+  height: 155px;
 }
 
 .twoColumns :first-child {
@@ -141,14 +159,20 @@ body {
   margin: 0px;
 }
 
+/* Weather Icon */
 .weatherIcon {
-  height: 85px;
-  width: 85px;
+  height: 90px;
+  width: 90px;
+  margin: 0px 0px 0px 0px;
 }
 
 .twoColumns h2 {
-  font-size: 50px;
+  font-size: 55px;
   font-weight: 900;
+}
+
+.twoColumns h2 sup {
+  font-size: 20px;
 }
 
 .twoColumns :last-child {
@@ -159,17 +183,8 @@ body {
 
 /* Weather description */
 .box p {
-  color: #ffd600;
+  /* color: #ffd600; */
   padding-left: 5px;
+  font-size: 22px;
+  margin: -8px 0px 0px 0px;
 }
-
-/* Double box back */
-
-/* #gridList ::after {
-  content: " ";
-  display: block;
-  height: 50px;
-  width: 50px;
-  background-color: rgb(7, 255, 73);
-  z-index: 1;
-} */

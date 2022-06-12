@@ -34,20 +34,18 @@
   </head>
   <body>
     <!-- Header of page -->
-
     <div id="header">
       <div>
         <h1 id="title">Weather App</h1>
         <button id="moreInfo" class="btn btn-secondary">i</button>
       </div>
-      <input
-        type="checkbox"
-        checked
-        data-toggle="toggle"
-        data-on="F"
-        data-off="C"
-        data-onstyle="dark"
-      />
+      <button
+        id="farenheight"
+        class="btn btn-primary"
+        onclick="changeDegrees()"
+      >
+        F
+      </button>
     </div>
 
     <!-- Search bar & alert message -->
@@ -66,24 +64,42 @@
       </section>
     </div>
 
-    <div id="gridList">
-      <div class="box">
-        <div id="topOfBox">
-          <h4>New York, US</h4>
-        </div>
-        <div class="twoColumns">
-          <h2>64<sup>℉</sup></h2>
-          <div>
-            <img
-              class="weatherIcon"
-              src="http://openweathermap.org/img/wn/10d@2x.png"
-              alt=""
-            />
-          </div>
-        </div>
-        <p>Sunny</p>
+    <div id="gridList"></div>
+
+    <!-- Blurs background when info button is clicked-->
+    <div id="backgroundBlur"></div>
+
+    <!-- Info box when info button is clicked -->
+    <div id="infoBox">
+      <div id="infoBoxHeader">
+        <h2>App Information</h2>
+        <button id="infoBoxBtn" class="btn btn-sm btn-primary">x</button>
       </div>
+
+      <br />
+      <p>
+        <b>How to use: </b>Write in the name of a city anywhere around the world
+        and hit search! Switch between farnheight and celcius with the button on
+        the top right.
+      </p>
+
+      <p>
+        <b>Tools used: </b>HTML, CSS, JavaScript, OpenWeatherMap API & a bit of
+        bootstrap.
+      </p>
+
+      <p>
+        <b>For geeks: </b>This weather app was built with plane old JavaScript.
+        Obtaining the information from OpenWeatherMap.org's weather API. Data is
+        obtained using the old-fashioned technique; XMLHttpRequest objects.
+      </p>
+
+      <p>
+        <b>Concepts applied: </b>AJAX using XMLHttpRequest objects, JSON
+        manipulation, obtaining information from an API, DOM Manipulation.
+      </p>
     </div>
+
     <script src="script.js"></script>
   </body>
 </html>

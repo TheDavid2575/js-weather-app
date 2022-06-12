@@ -58,7 +58,7 @@ form.addEventListener("submit", (e) => {
         <h4>${data.name}, ${data.sys.country}</h4>
       </div>
       <div class="twoColumns">
-        <h2>${Math.floor(temp)}<sup>℉</sup></h2>
+        <h2>${Math.floor(temp)}<sup>${farenheight ? "℉" : "℃"}</sup></h2>
         <div>
           <img class="weatherIcon" src="http://openweathermap.org/img/wn/${
             data.weather[0].icon
@@ -91,3 +91,26 @@ form.addEventListener("submit", (e) => {
 
   xhr.send();
 });
+
+// Open info box button
+document.getElementById("moreInfo").addEventListener("click", () => {
+  document.getElementById("infoBox").style.display = "block";
+  document.getElementById("backgroundBlur").style.display = "block";
+});
+
+// Close info box button
+document.getElementById("infoBoxBtn").addEventListener("click", () => {
+  document.getElementById("infoBox").style.display = "none";
+  document.getElementById("backgroundBlur").style.display = "none";
+});
+
+// Change between celcius and farenheight
+function changeDegrees() {
+  farenheight = farenheight ? false : true;
+
+  if (farenheight) {
+    document.getElementById("farenheight").innerHTML = "F";
+  } else {
+    document.getElementById("farenheight").innerHTML = "C";
+  }
+}

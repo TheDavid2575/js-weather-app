@@ -30,11 +30,22 @@ body {
 }
 
 #moreInfo {
-  margin: 0px 0px 0px 20px;
+  margin: 0px 40px 0px 20px;
   border-radius: 50%;
-  height: 35px;
-  width: 35px;
-  padding: 5px;
+  height: 40px;
+  width: 40px;
+  padding: 9px 15px 15px 15px;
+  background-color: #ffd600;
+  color: black;
+  border-color: black;
+}
+
+#farenheight {
+  background-color: #ffd600;
+  color: black;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffffff;
 }
 
 /* SEARCH FORM  */
@@ -47,6 +58,7 @@ body {
   /* background-color: yellow; */
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-end;
   margin: 0px 0px 20px 0px;
 }
@@ -55,6 +67,7 @@ body {
   color: white;
   font-size: 25px;
   font-weight: 700;
+  margin: 5px;
 }
 
 #searchInp {
@@ -64,10 +77,11 @@ body {
   font-weight: 300;
   width: 400px;
   padding-left: 7px;
+  margin-bottom: 15px;
 }
 
 #searchBtn {
-  margin: 0px 0px 0px 15px;
+  margin: 0px 0px 13px 15px;
   width: 100px;
   border-radius: 10px;
   border-color: black;
@@ -112,8 +126,24 @@ body {
 }
 
 @media screen and (max-width: 500px) {
+  #title {
+    font-size: 40px;
+  }
+
   #gridList {
     grid-template-columns: repeat(1, 1fr);
+  }
+
+  #searchBtn {
+    margin-left: 0px;
+  }
+
+  .box {
+    margin: auto;
+  }
+
+  #searchBtn {
+    display: inline-block;
   }
 }
 
@@ -131,6 +161,7 @@ body {
   min-width: 220px;
   border-style: solid;
   border-color: white;
+  min-width: 230px;
 }
 
 /* Double box back */
@@ -193,7 +224,7 @@ body {
   font-size: 22px;
   margin: -14px 0px 0px 0px;
 }
-/* 
+
 #backgroundBlur {
   display: block;
   height: 100%;
@@ -205,10 +236,11 @@ body {
   z-index: 2;
   filter: blur(8px);
   -webkit-filter: blur(8px);
+  display: none;
 }
 
 #infoBox {
-  height: 500px;
+  height: 540px;
   width: 80%;
   max-width: 700px;
   background-color: aliceblue;
@@ -218,5 +250,12 @@ body {
   z-index: 3;
   opacity: 100%;
   border-radius: 20px;
-  padding: 20px;
-} */
+  padding: 22px;
+  display: none;
+}
+
+#infoBoxHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}

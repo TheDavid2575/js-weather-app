@@ -16,16 +16,29 @@ form.addEventListener("submit", (e) => {
   // API Call
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${inpVal}&appid=${apiKey}`;
 
-  // Calling API with XMLHttpRequest object
+  // Creating an XHR object
   let xhr = new XMLHttpRequest();
 
+  // Calling API with XMLHttpRequest object
   xhr.open("GET", url, true);
 
   xhr.onload = function (argument, rejected) {
     if (this.status == 200) {
       // If call goes good:
       let data = JSON.parse(this.responseText);
-      console.log(data);
+
+      if (localStorage.includes(data.name)) {
+        document.getElementById("alertUser").innerHTML =
+          "City already added below!";
+
+        document.getElementById("alertUser").style.opacity = "100%";
+
+        setTimeout(() => {
+          document.getElementById("alertUser").style.opacity = "0%";
+        }, 3000);
+
+        throw new Error("City already added below");
+      }
 
       // Temperature comes in Kelvin
       // Kelvin to Farenheight: (K − 273.15) × 9/5 + 32
@@ -39,15 +52,10 @@ form.addEventListener("submit", (e) => {
           ? ((data.main.temp - 273.15) * 9) / 5 + 32
           : data.main.temp - 273.15;
 
-      console.log(data.weather[0].icon);
-
       // Set new DOM element's HTML to box card
       card.innerHTML = `<div class="box">
       <div id="topOfBox">
         <h4>${data.name}, ${data.sys.country}</h4>
-        <button id="btn${
-          data.name
-        }" class="deleteBtn btn btn-secondary btn-xs"> x </button>
       </div>
       <div class="twoColumns">
         <h2>${Math.floor(temp)}<sup>℉</sup></h2>
@@ -60,28 +68,26 @@ form.addEventListener("submit", (e) => {
       <p>${data.weather[0].main}</p>
     </div>`;
 
+      // Adding name of city to local storage
       localStorage.push(data.name);
-
-      // Adding event listener
-      document
-        .getElementById(`btn${data.name}`)
-        .addEventListener("click", () => {
-          console.log("It works");
-        });
 
       // Appending new element to DOM
       document.getElementById("gridList").appendChild(card);
 
-      //
+      // If API call fails
     } else {
+      document.getElementById("alertUser").innerHTML =
+        "Please enter a valid city!";
+
       document.getElementById("alertUser").style.opacity = "100%";
 
       setTimeout(() => {
         document.getElementById("alertUser").style.opacity = "0%";
       }, 3000);
     }
+
+    document.getElementById("searchInp").value = "";
   };
+
   xhr.send();
 });
-
-// Eliminate a weather card with button

@@ -31,6 +31,10 @@ body {
 
 #moreInfo {
   margin: 0px 0px 0px 20px;
+  border-radius: 50%;
+  height: 35px;
+  width: 35px;
+  padding: 5px;
 }
 
 /* SEARCH FORM  */
@@ -114,7 +118,7 @@ body {
 }
 
 .box {
-  background-color: #697d8b;
+  background-color: #8ca3b3;
   display: block;
   position: relative;
   border-radius: 20px;
@@ -125,6 +129,8 @@ body {
   padding: 15px 15px 15px 15px;
   z-index: 1;
   min-width: 220px;
+  border-style: solid;
+  border-color: white;
 }
 
 /* Double box back */
@@ -156,14 +162,15 @@ body {
 .twoColumns :first-child {
   justify-self: flex-start;
   align-self: flex-end;
-  margin: 0px;
 }
 
 /* Weather Icon */
 .weatherIcon {
-  height: 90px;
-  width: 90px;
-  margin: 0px 0px 0px 0px;
+  height: 160px;
+  width: 160px;
+  /* margin-bottom: 15px; */
+  margin-top: -40px;
+  margin-left: -20px;
 }
 
 .twoColumns h2 {
@@ -178,13 +185,38 @@ body {
 .twoColumns :last-child {
   justify-self: center;
   align-self: center;
-  margin: 0px;
 }
 
 /* Weather description */
 .box p {
-  /* color: #ffd600; */
   padding-left: 5px;
   font-size: 22px;
-  margin: -8px 0px 0px 0px;
+  margin: -14px 0px 0px 0px;
 }
+/* 
+#backgroundBlur {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: #373636aa;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 2;
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+}
+
+#infoBox {
+  height: 500px;
+  width: 80%;
+  max-width: 700px;
+  background-color: aliceblue;
+  position: absolute;
+  left: 40px;
+  top: 140px;
+  z-index: 3;
+  opacity: 100%;
+  border-radius: 20px;
+  padding: 20px;
+} */
